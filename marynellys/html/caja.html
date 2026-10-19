@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Caja · MaryNellys</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="caja" data-root="../">
+<aside class="side" id="side"></aside>
+<div class="main">
+<header class="top" id="topbar"></header>
+<main>
+<section class="view on" id="caja">
+  <p class="k">09 CAJA</p><h1>Cobrar mesa</h1><p class="sub">Revisa la cuenta y registra el método de pago.</p>
+  <h2 style="margin-top:20px">Mesas por cobrar</h2>
+  <div class="g3" id="cm" style="margin-top:10px"></div>
+  <div class="split">
+    <div class="card pad"><h2>Resumen de la cuenta</h2>
+      <div id="cuenta"><p class="sub">Selecciona una mesa para ver su cuenta.</p></div>
+      <div class="ln"><span>Subtotal</span><b id="sb">$0</b></div>
+      <div class="ln"><span><label class="sw" style="display:inline-flex"><input type="checkbox" id="sv" checked> Servicio sugerido (10%)</label></span><b id="sva">$0</b></div>
+      <div class="ln"><span>Total a pagar</span><span class="tot" id="tt">$0</span></div></div>
+    <div class="card pad"><h2>Método de pago</h2>
+      <div class="pays" id="pays"><button class="on" data-m="Efectivo">Efectivo</button><button data-m="Nequi">Nequi</button><button data-m="Tarjeta">Tarjeta</button></div>
+      <div class="fl"><label for="rc">Valor recibido</label><input id="rc" type="number" placeholder="$ 100.000"><small class="err" id="rce"></small></div>
+      <div class="ln"><span>Cambio</span><b id="cb">$0</b></div>
+      <button class="btn" id="pay" style="width:100%;margin-top:12px">✓ Confirmar pago</button></div>
+  </div>
+</section>
+</main>
+</div>
+<script src="../js/models/validator.js"></script>
+<script src="../js/models/menu.js"></script>
+<script src="../js/models/datos.js"></script>
+<script src="../js/views/domView.js"></script>
+<script src="../js/views/shellView.js"></script>
+<script src="../js/views/modalView.js"></script>
+<script src="../js/views/formView.js"></script>
+<script src="../js/models/comandas.js"></script>
+<script src="../js/models/ventas.js"></script>
+<script src="../js/models/mesas.js"></script>
+<script src="../js/controllers/shellController.js"></script>
+<script src="../js/controllers/cajaController.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

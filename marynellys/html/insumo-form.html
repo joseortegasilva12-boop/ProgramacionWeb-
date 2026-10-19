@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Registrar insumo · MaryNellys</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../css/base.css">
+<link rel="stylesheet" href="../css/layout.css">
+<link rel="stylesheet" href="../css/responsive.css">
+</head>
+<body data-page="insumo-form" data-root="../">
+<aside class="side" id="side"></aside>
+<div class="main">
+<header class="top" id="topbar"></header>
+<main>
+<section class="view on" id="form">
+  <p class="k">02 INVENTARIO · FORMULARIO</p><h1 id="ft">Registrar nuevo insumo</h1><p class="sub">Los campos marcados con * son obligatorios.</p>
+  <form id="f" class="card fm" novalidate>
+    <div class="alert" id="sum" role="alert" hidden>Revisa los campos marcados antes de continuar.</div>
+    <div class="g2">
+      <div class="fl"><label for="f-n">Nombre del insumo *</label><input id="f-n" name="n" data-rules="required" placeholder="Ej. Arroz blanco"><small class="err"></small></div>
+      <div class="fl"><label for="f-c">Categoría *</label><select id="f-c" name="c" data-rules="required"><option value="">Selecciona una categoría</option><option>Granos</option><option>Carnes</option><option>Tubérculos</option><option>Frutas</option><option>Lácteos</option><option>Bebidas</option></select><small class="err"></small></div>
+      <div class="fl"><label for="f-q">Cantidad disponible *</label><input id="f-q" name="q" data-rules="required|number" type="number" step="any" placeholder="0"><small class="err"></small></div>
+      <div class="fl"><label for="f-u">Unidad de medida *</label><select id="f-u" name="u" data-rules="required"><option value="">Selecciona una unidad</option><option>kg</option><option>und</option><option>l</option><option>lb</option></select><small class="err"></small></div>
+      <div class="fl"><label for="f-m">Stock mínimo *</label><input id="f-m" name="m" data-rules="required|number" type="number" step="any" placeholder="0"><small class="err"></small></div>
+      <div class="fl"><label for="f-p">Costo unitario *</label><input id="f-p" name="p" data-rules="required|positivo" type="number" step="any" placeholder="$ 0"><small class="err"></small></div>
+      <div class="fl"><label for="f-v">Proveedor</label><input id="f-v" name="v" placeholder="Nombre del proveedor"><small class="err"></small></div>
+    </div>
+    <div class="acts"><button type="button" class="btn sec" id="cancel">Cancelar</button><button class="btn">✓ Guardar insumo</button></div>
+  </form>
+</section>
+</main>
+</div>
+<script src="../js/models/validator.js"></script>
+<script src="../js/models/menu.js"></script>
+<script src="../js/models/datos.js"></script>
+<script src="../js/views/domView.js"></script>
+<script src="../js/views/shellView.js"></script>
+<script src="../js/views/modalView.js"></script>
+<script src="../js/views/formView.js"></script>
+<script src="../js/controllers/shellController.js"></script>
+<script src="../js/models/insumos.js"></script>
+<script src="../js/controllers/formController.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

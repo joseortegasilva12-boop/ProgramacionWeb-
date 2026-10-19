@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Historial de ventas · MaryNellys</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body data-page="historial-ventas" data-root="../">
+  <aside class="side" id="side"></aside>
+  <div class="main">
+    <header class="top" id="topbar"></header>
+    <main>
+      <section class="view on" id="ventas">
+        <div class="hd">
+          <div>
+            <p class="k">12 ADMINISTRACIÓN</p>
+            <h1>Historial de ventas</h1>
+            <p class="sub">Consulta las ventas registradas por fecha, mesa y método de pago.</p>
+          </div>
+        </div>
+        <div class="g" id="resumen" style="margin-bottom:20px"></div>
+        <div class="card">
+          <div class="bar">
+            <input id="vq" type="search" placeholder="Buscar por mesa o producto…" aria-label="Buscar venta">
+            <input id="vd" type="date" aria-label="Desde" style="width:auto">
+            <input id="vh" type="date" aria-label="Hasta" style="width:auto">
+            <select id="vm" aria-label="Método de pago">
+              <option value="">Todos los métodos</option>
+              <option>Efectivo</option>
+              <option>Nequi</option>
+              <option>Tarjeta</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Fecha
+                <th>Mesa
+                <th>Productos
+                <th>Método de pago
+                <th>Total
+            </thead>
+            <tbody id="vb"></tbody>
+          </table>
+          <p class="sub pad" id="vempty" hidden>No hay ventas para mostrar.</p>
+          <div class="ln" style="padding:16px"><span>Ventas mostradas: <b id="vn">0</b></span><span>Total: <b
+                class="tot" id="vt">$0</b></span></div>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/models/validator.js"></script>
+  <script src="../js/models/menu.js"></script>
+  <script src="../js/models/datos.js"></script>
+  <script src="../js/views/domView.js"></script>
+  <script src="../js/views/shellView.js"></script>
+  <script src="../js/views/modalView.js"></script>
+  <script src="../js/views/formView.js"></script>
+  <script src="../js/controllers/shellController.js"></script>
+  <script src="../js/models/ventas.js"></script>
+  <script src="../js/views/ventasView.js"></script>
+  <script src="../js/controllers/ventasController.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>
