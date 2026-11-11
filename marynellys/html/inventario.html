@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Inventario · MaryNellys</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/layout.css">
+  <link rel="stylesheet" href="../css/responsive.css">
+</head>
+
+<body data-page="inventario" data-root="../">
+  <aside class="side" id="side"></aside>
+  <div class="main">
+    <header class="top" id="topbar"></header>
+    <main>
+      <section class="view on" id="inv">
+        <div class="hd">
+          <div>
+            <p class="k">01 INVENTARIO</p>
+            <h1>Inventario de insumos</h1>
+            <p class="sub">Controla existencias, costos y proveedores del restaurante.</p>
+          </div>
+          <button class="btn" id="new">+ Nuevo insumo</button>
+        </div>
+        <div class="card">
+          <div class="bar">
+            <input id="q" type="search" placeholder="Buscar por nombre o proveedor…" aria-label="Buscar insumo">
+            <select id="cat" aria-label="Filtrar por categoría">
+              <option value="">Todas las categorías</option>
+              <option>Granos</option>
+              <option>Carnes</option>
+              <option>Tubérculos</option>
+              <option>Frutas</option>
+              <option>Lácteos</option>
+              <option>Bebidas</option>
+            </select>
+          </div>
+          <table>
+            <thead>
+              <tr>
+                <th>Insumo
+                <th>Categoría
+                <th>Cantidad
+                <th>Stock mínimo
+                <th>Costo unitario
+                <th>Proveedor
+                <th>
+            </thead>
+            <tbody id="tb"></tbody>
+          </table>
+          <p class="sub pad" id="empty" hidden>No hay insumos para mostrar.</p>
+        </div>
+      </section>
+    </main>
+  </div>
+  <script src="../js/models/validator.js"></script>
+  <script src="../js/models/menu.js"></script>
+  <script src="../js/models/datos.js"></script>
+  <script src="../js/views/domView.js"></script>
+  <script src="../js/views/shellView.js"></script>
+  <script src="../js/views/modalView.js"></script>
+  <script src="../js/views/formView.js"></script>
+  <script src="../js/controllers/shellController.js"></script>
+  <script src="../js/models/insumos.js"></script>
+  <script src="../js/views/inventarioView.js"></script>
+  <script src="../js/controllers/inventarioController.js"></script>
+  <script src="../js/main.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,92 @@
+/* ==========================================================
+   RESPONSIVE: ajustes para tableta y celular
+   ========================================================== */
+@media(max-width:900px) {
+   .side {
+      position: fixed;
+      left: -260px;
+      transition: left .25s
+   }
+
+   .side.open {
+      left: 0
+   }
+
+   #burger {
+      display: block
+   }
+
+   .g3,
+   .split {
+      grid-template-columns: 1fr
+   }
+}
+
+@media(max-width:700px) {
+   .g2 {
+      grid-template-columns: 1fr
+   }
+
+   .view {
+      padding: 20px 14px
+   }
+
+   h1 {
+      font-size: 22px
+   }
+
+   .top {
+      padding: 10px 14px
+   }
+
+   .who {
+      display: none
+   }
+
+   thead {
+      display: none
+   }
+
+   table,
+   tbody,
+   tr,
+   td {
+      display: block
+   }
+
+   tr {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--ln)
+   }
+
+   td {
+      border: 0;
+      padding: 4px 16px
+   }
+
+   td::before {
+      content: attr(data-l);
+      display: block;
+      font-size: 11px;
+      color: var(--g);
+      text-transform: uppercase
+   }
+
+   .act {
+      text-align: left
+   }
+
+   .acts {
+      flex-direction: column-reverse
+   }
+
+   .acts .btn {
+      width: 100%
+   }
+}
+
+@media(prefers-reduced-motion:reduce) {
+   * {
+      transition: none !important
+   }
+}

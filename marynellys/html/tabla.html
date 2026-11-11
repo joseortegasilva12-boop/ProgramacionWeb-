@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Tabla</title>
+</head>
+<body>
+    <h1 id="titulo">HOLA MUNDO!!</h1>
+    
+    <h3>Agregar Elemento</h3>
+    <label>Ingresa un nombre:</label><br>
+    <input id="nombre" type="text" placeholder="Escribe tu nombre"/><br><br>
+    <label>Ingresa una edad:</label><br>
+    <input id="edad" type="text" placeholder="Escribe tu edad"/>
+    <br><br>
+    <button id="btn-Agregar">Agregar elemento</button>
+    <br><br>
+
+    <h3>Editar Elemento</h3>
+    <label>Nombre:</label><br>
+    <input id="nombreEditar" type="text" placeholder="Elije primero un elemento"/><br><br>
+    <label>Edad:</label><br>
+    <input id="edadEditar" type="text" placeholder="Elije primero un elemento"/>
+    <br><br>
+    <button id="btn-Aplicar-Cambios">Aplicar cambios</button>
+    <br><br>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Edad</th>
+                <th>Editar</th>
+                <th>Eliminar</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Ana</td>
+                <td>25</td>
+                <td><button class="btn-Editar">Editar</button></td>
+                <td><button class="btn-Eliminar">Eliminar</button></td>
+            </tr>
+            <tr>
+                <td>Julio</td>
+                <td>30</td>
+                <td><button class="btn-Editar">Editar</button></td>
+                <td><button class="btn-Eliminar">Eliminar</button></td>
+            </tr>
+            </tr>
+        </tbody>
+    </table>
+
+    <script>
+        // tr es fila y td es columna
+        const btnAgregar = document.getElementById("btn-Agregar");
+        btnAgregar.addEventListener("click", function(){
+            const nombre = document.getElementById("nombre").value;
+            const edad = document.getElementById("edad").value;
+
+            const nuevaFila = document.createElement("tr");
+            nuevaFila.innerHTML = "<td>" + nombre + "</td><td>" + edad + "</td>" + "<td><button class='btn-Editar'>Editar</button></td>"+ "<td><button class='btn-Eliminar'>Eliminar</button></td>";
+
+            const tbody = document.querySelector("table tbody");
+            tbody.appendChild(nuevaFila);
+
+            document.getElementById("nombre").value = "";
+            document.getElementById("edad").value = "";
+          })
+
+       // FUNCION EDITAR ELEMENTO //
+        let filaSeleccionada = null;
+        const tbody = document.querySelector("table tbody");
+        
+        tbody.addEventListener("click", function(event) {
+            if (event.target.classList.contains("btn-Editar")) {
+                filaSeleccionada = event.target.closest("tr");
+
+                const nombreActual = filaSeleccionada.children[0].textContent;
+                const edadActual = filaSeleccionada.children[1].textContent;
+
+                document.getElementById("nombreEditar").value = nombreActual;
+                document.getElementById("edadEditar").value = edadActual;
+            }
+        });
+        
+        const btnAplicar = document.getElementById("btn-Aplicar-Cambios");
+        btnAplicar.addEventListener("click", function(){
+            if (filaSeleccionada) {
+                const nuevoNombre = document.getElementById("nombreEditar").value;
+                const nuevaEdad = document.getElementById("edadEditar").value;
+
+                filaSeleccionada.children[0].textContent = nuevoNombre;
+                filaSeleccionada.children[1].textContent = nuevaEdad;
+
+                document.getElementById("nombreEditar").value = "";
+                document.getElementById("edadEditar").value = "";
+                filaSeleccionada = null;
+            }
+            else {
+                alert("Por favor, selecciona un elemento para editar.");
+            }
+        });
+
+        // FUNCION ELIMINAR ELEMENTO //
+        tbody.addEventListener("click", function(event) {
+            if (event.target.classList.contains("btn-Eliminar")) {
+                const filaAEliminar = event.target.closest("tr");
+                filaAEliminar.remove();
+            }
+        });
+    </script>
+</body>
+</html>
